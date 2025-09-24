@@ -2,10 +2,10 @@
 
 namespace App\Traits;
 
-use App\Traits\ApiResponses;
+
 use Illuminate\Http\Request;
 
- trait ApiResponses
+trait ApiResponses
 {
     protected function success($message, $statusCode = 200)
     {
@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
         return $this->success($message, 200);
     }
 
-    protected function badRequest($message, $statusCode )
+    protected function badRequest($message, $statusCode)
     {
         return response()->json([
             'code' => $statusCode,

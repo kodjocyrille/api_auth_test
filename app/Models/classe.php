@@ -4,13 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class classe extends Model
+class Classe extends Model
 {
     protected $fillable = [
         'effectif',
         'nom_classe',
         'nombre_garcon',
         'nombre_fille',
-        'classe_id'
+
     ];
+
+    public function eleves()
+    {
+        return $this->hasMany(Eleve::class);
+    }
 }
